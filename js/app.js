@@ -7,6 +7,9 @@ var firstAndPike = {
   minCust: 23,
   maxCust: 65,
   avgCookie: 6.3,
+  numCustomers: function() {
+    return Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust;
+  }
 }
 
 var seaTac = {
@@ -14,6 +17,9 @@ var seaTac = {
   minCust: 3,
   maxCust: 24,
   avgCookie: 1.2,
+  numCustomers: function() {
+    return Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust;
+  }
 }
 
 var seattleCenter = {
@@ -21,6 +27,9 @@ var seattleCenter = {
   minCust: 11,
   maxCust: 38,
   avgCookie: 3.7,
+  numCustomers: function() {
+    return Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust;
+  }
 }
 
 var capitolHill = {
@@ -28,6 +37,9 @@ var capitolHill = {
   minCust: 20,
   maxCust: 38,
   avgCookie: 2.3,
+  numCustomers: function() {
+    return Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust;
+  }
 }
 
 var alki = {
@@ -35,4 +47,7 @@ var alki = {
   minCust: 2,
   maxCust: 16,
   avgCookie: 4.6,
+  numCustomers: function() {
+    return Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust;
+  }
 }
