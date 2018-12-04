@@ -17,9 +17,12 @@ var firstAndPike = {
   },
   calcHourlySales: function() {
     var hourlySales = [];
+    var totalCookiesSold = 0;
     for(var i = 0; i < hours.length; i++) {
       hourlySales[i] = this.calcCookies();
+      totalCookiesSold += hourlySales[i];
     }
+    hourlySales.push(totalCookiesSold);
     return hourlySales;
   }
 };
@@ -42,9 +45,12 @@ var seaTac = {
   },
   calcHourlySales: function() {
     var hourlySales = [];
+    var totalCookiesSold = 0;
     for(var i = 0; i < hours.length; i++) {
       hourlySales[i] = this.calcCookies();
+      totalCookiesSold += hourlySales[i];
     }
+    hourlySales.push(totalCookiesSold);
     return hourlySales;
   }
 };
@@ -64,9 +70,12 @@ var seattleCenter = {
   },
   calcHourlySales: function() {
     var hourlySales = [];
+    var totalCookiesSold = 0;
     for(var i = 0; i < hours.length; i++) {
       hourlySales[i] = this.calcCookies();
+      totalCookiesSold += hourlySales[i];
     }
+    hourlySales.push(totalCookiesSold);
     return hourlySales;
   }
 };
@@ -86,9 +95,12 @@ var capitolHill = {
   },
   calcHourlySales: function() {
     var hourlySales = [];
+    var totalCookiesSold = 0;
     for(var i = 0; i < hours.length; i++) {
       hourlySales[i] = this.calcCookies();
+      totalCookiesSold += hourlySales[i];
     }
+    hourlySales.push(totalCookiesSold);
     return hourlySales;
   }
 };
@@ -108,9 +120,12 @@ var alki = {
   },
   calcHourlySales: function() {
     var hourlySales = [];
+    var totalCookiesSold = 0;
     for(var i = 0; i < hours.length; i++) {
       hourlySales[i] = this.calcCookies();
+      totalCookiesSold += hourlySales[i];
     }
+    hourlySales.push(totalCookiesSold);
     return hourlySales;
   }
 };
