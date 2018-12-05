@@ -26,29 +26,33 @@ Cookie.renderHeader = function() {
   cookieTable.appendChild(headerRow);
 };
 
-
 Cookie.prototype.render = function() {
   var trEl = document.createElement('tr');
   var tdEl = document.createElement('td');
+  tdEl.id = 'store-name';
   tdEl.textContent = this.storeName;
   trEl.appendChild(tdEl);
 
   var totalSoldStore = 0;
+  //var byTheHour = [];
   for(var i = 0; i < storeHours.length - 1; i++) {
     var numCustomers = Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust;
 
     var numCookies = Math.ceil(numCustomers * this.avgCookie);
     totalSoldStore += numCookies;
+    //byTheHour.push(numCookies);    create array to store random values?
 
     tdEl = document.createElement('td');
     tdEl.textContent = numCookies;
     trEl.appendChild(tdEl);
   }
   tdEl = document.createElement('td');
+  tdEl.id = 'total-per-store';
   tdEl.textContent = totalSoldStore;
   trEl.appendChild(tdEl);
   cookieTable.appendChild(trEl);
 };
+
 new Cookie('1st and Pike', 23, 65, 6.3);
 new Cookie('SeaTac', 3, 24, 1.2);
 new Cookie('Seattle Center', 11, 38, 3.7);
@@ -63,13 +67,3 @@ Cookie.renderAllStores = function() {
 
 Cookie.renderHeader();
 Cookie.renderAllStores();
-
-// calcHourlySales: function() {
-//   var hourlySales = [];
-//   var totalCookiesSold = 0;
-//   for(var i = 0; i < hours.length; i++) {
-//     hourlySales[i] = this.calcCookies();
-//     totalCookiesSold += hourlySales[i];
-//   }
-//   hourlySales.push(totalCookiesSold);
-//   return hourlySales;

@@ -1,0 +1,39 @@
+#sales-page {
+  background-color: lemonchiffon;
+}
+
+#public-page {
+  background-color: bisque;
+}
+
+#salmon-cookies-heading {
+  font-size: 45px;
+  color: saddlebrown;
+  text-align: center;
+}
+
+#hourly-sales {
+  font-size: 45px;
+  color: darkslategrey;
+  text-align: center;
+}
+
+#cookie-table {
+   margin-left: auto;
+   margin-right: auto;
+   border: 8px double darkslategrey;
+}
+
+th, td {
+  padding: 10px;
+  border-bottom: 3px solid darkslategrey;
+}
+
+#store-name {
+  font-weight: bold;
+}
+
+#total-per-store {
+  border-left: 3px solid darkslategrey;
+  font-weight: bold
+}
