@@ -67,3 +67,24 @@ label, input {
   margin-bottom: 10px;
   padding: 3px;
 }
+
+.salmon-pic {
+  width: 125px;
+  margin: 10px;
+  transform: rotate(-25deg);
+}
+
+#right-salmon-pic {
+  float: right;
+}
+
+#navigation {
+  display: flex;
+  justify-content: center;
+}
+
+#navigation li {
+  list-style-type: none;
+  display: inline-block;
+  margin: 20px;
+}
