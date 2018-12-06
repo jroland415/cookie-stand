@@ -11,19 +11,19 @@
       <fieldset>
         <legend>Add a New Location</legend>
         
-        <label for="name">Location Name</label>
-        <input id="name" type="text" name="locationName"/>
+        <label for="name">Location Name:</label>
+        <input id="name" type="text" name="locationName" required/>
 
-        <label for="min">Minimum Customers Per Hour</label>
-        <input id="min" type="number" name="minPerHour"/>
+        <label for="min">Minimum Customers Per Hour:</label>
+        <input id="min" type="number" min="0" name="minPerHour" required/>
 
-        <label for="max">Maximum Customers Per Hour</label>
-        <input id="max" type="number" name="maxPerHour"/>
+        <label for="max">Maximum Customers Per Hour:</label>
+        <input id="max" type="number" min="0" name="maxPerHour" required/>
 
-        <label for="avg">Average Number of Cookies Per Hour</label>
-        <input id="avg" type="number" name="avgCook"/>
+        <label for="avg">Average Number of Cookies Per Hour:</label>
+        <input id="avg" type="number" min="0" step="0.1" name="avgCook" required/>
 
-        <button>Add Location</button>
+        <button id="add-button">Add Location</button>
       </fieldset>
     </form>
     <table id="cookie-table"></table>
