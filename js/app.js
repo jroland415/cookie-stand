@@ -11,7 +11,13 @@ function Cookie(storeName, minCust, maxCust, avgCookie) {
   this.minCust = minCust;
   this.maxCust = maxCust;
   this.avgCookie = avgCookie;
+  this.calcNumCustomers = function() {Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust;};
+  this.calcNumCookies = function() {Math.ceil(this.calcNumCustomers * this.avgCookie);
+    for(var i = 0; i < storeHours.length - 1; i++) {this.byTheHour.push(this.calcNumCookies);
+    }
+  };
   this.byTheHour = [];
+  this.totalSoldStore = 0;
   Cookie.allStores.push(this);
 }
 
@@ -34,21 +40,15 @@ Cookie.prototype.render = function() {
   tdEl.id = 'store-name';
   tdEl.textContent = this.storeName;
   trEl.appendChild(tdEl);
-  var totalSoldStore = 0;
-  for(var i = 0; i < storeHours.length - 1; i++) {
-    var numCustomers = Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust;
 
-    var numCookies = Math.ceil(numCustomers * this.avgCookie);
-    totalSoldStore += numCookies;
-    this.byTheHour.push(numCookies);
-
+  for(var i = 0; i < storeHours.length; i++) {
     tdEl = document.createElement('td');
-    tdEl.textContent = numCookies;
+    tdEl.textContent = this.byTheHour[i];
     trEl.appendChild(tdEl);
   }
   tdEl = document.createElement('td');
   tdEl.id = 'total-per-store';
-  tdEl.textContent = totalSoldStore;
+  tdEl.textContent = this.totalSoldStore;
   trEl.appendChild(tdEl);
   cookieTable.appendChild(trEl);
 };
