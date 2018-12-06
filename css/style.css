@@ -12,7 +12,7 @@
   text-align: center;
 }
 
-#hourly-sales {
+#hourly-sales-heading {
   font-size: 45px;
   color: darkslategrey;
   text-align: center;
@@ -24,9 +24,14 @@
    border: 8px double darkslategrey;
 }
 
-th, td {
+th {
   padding: 10px;
   border-bottom: 3px solid darkslategrey;
+}
+
+td {
+  padding: 10px;
+  border: 1px solid darkslategrey;
 }
 
 #store-name {
@@ -34,11 +39,19 @@ th, td {
 }
 
 #total-per-store {
-  border-left: 3px solid darkslategrey;
   font-weight: bold
 }
 
 #hourly-totals {
+  font-weight: bold;
+}
+
+#new-location-form {
+  margin: 15px;
+}
+
+legend {
+  font-size: 20px;
   font-weight: bold;
 }
 
@@ -50,5 +63,7 @@ label, input {
 
 #add-button {
   display: block;
+  margin-top: 15px;
+  margin-bottom: 10px;
   padding: 3px;
 }
