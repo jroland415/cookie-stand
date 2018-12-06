@@ -6,8 +6,27 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body id="sales-page">
-    <h1 id="hourly-sales">Hourly Cookie Sales by Location</h1>
+    <h1 id="hourly-sales-heading">Hourly Cookie Sales by Location</h1>
     <table id="cookie-table"></table>
+    <form id="new-location-form">
+      <fieldset>
+        <legend>Add a New Location</legend>
+        
+        <label for="name">Location Name:</label>
+        <input id="name" type="text" name="locationName" required/>
+
+        <label for="min">Minimum Customers Per Hour:</label>
+        <input id="min" type="number" min="0" name="minPerHour" required/>
+
+        <label for="max">Maximum Customers Per Hour:</label>
+        <input id="max" type="number" min="0" name="maxPerHour" required/>
+
+        <label for="avg">Average Number of Cookies Per Hour:</label>
+        <input id="avg" type="number" min="0" step="0.1" name="avgCook" required/>
+
+        <button id="add-button">Add Location</button>
+      </fieldset>
+    </form>
     <script src="js/app.js"></script>
   </body>
 </html>
