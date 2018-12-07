@@ -10,6 +10,7 @@ function Cookie(storeName, minCust, maxCust, avgCookie) {
   this.minCust = minCust;
   this.maxCust = maxCust;
   this.avgCookie = avgCookie;
+  this.byTheHour = [];
   Cookie.allStores.push(this);
 }
 
@@ -34,13 +35,12 @@ Cookie.prototype.render = function() {
   trEl.appendChild(tdEl);
 
   var totalSoldStore = 0;
-  //var byTheHour = [];
   for(var i = 0; i < storeHours.length - 1; i++) {
     var numCustomers = Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust;
 
     var numCookies = Math.ceil(numCustomers * this.avgCookie);
+    this.byTheHour.push(numCookies);
     totalSoldStore += numCookies;
-    //byTheHour.push(numCookies);    create array to store random values?
 
     tdEl = document.createElement('td');
     tdEl.textContent = numCookies;
@@ -65,5 +65,29 @@ Cookie.renderAllStores = function() {
   }
 };
 
+Cookie.renderFooter = function() {
+  var footerRow = document.createElement('tr');
+  footerRow.id = 'hourly-totals';
+  var footerLabel = document.createElement('td');
+  footerLabel.textContent = 'Hourly Total';
+  footerRow.appendChild(footerLabel);
+  var grandTotal = 0;
+  for(var i = 0; i < storeHours.length - 1; i++) {
+    var totalPerHour = 0;
+    for(var j = 0; j < Cookie.allStores.length; j++) {
+      totalPerHour += Cookie.allStores[j].byTheHour[i];
+    }
+    grandTotal += totalPerHour;
+    var tdEl = document.createElement('td');
+    tdEl.textContent = totalPerHour;
+    footerRow.appendChild(tdEl);
+  }
+  var tdEl = document.createElement('td');
+  tdEl.textContent = grandTotal;
+  footerRow.appendChild(tdEl);
+  cookieTable.appendChild(footerRow);
+};
+
 Cookie.renderHeader();
 Cookie.renderAllStores();
+Cookie.renderFooter();

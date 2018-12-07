@@ -37,3 +37,7 @@ th, td {
   border-left: 3px solid darkslategrey;
   font-weight: bold
 }
+
+#hourly-totals {
+  font-weight: bold;
+}
