@@ -81,10 +81,19 @@ label, input {
 #navigation {
   display: flex;
   justify-content: center;
+  font-size: 18px;
 }
 
 #navigation li {
   list-style-type: none;
   display: inline-block;
   margin: 20px;
+}
+
+#family-pic {
+  width: 300px;
+}
+
+.merch-pic {
+  width: 250px;
 }
