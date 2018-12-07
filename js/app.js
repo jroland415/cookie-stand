@@ -12,14 +12,15 @@ function Cookie(storeName, minCust, maxCust, avgCookie) {
   this.maxCust = maxCust;
   this.avgCookie = avgCookie;
   this.calcNumCustomers = function() {Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust;};
-  this.calcNumCookies = function() {Math.ceil(this.calcNumCustomers * this.avgCookie);
-    for(var i = 0; i < storeHours.length - 1; i++) {this.byTheHour.push(this.calcNumCookies);
-    }
-  };
+  this.calcNumCookies = function() {Math.ceil(this.calcNumCustomers() * this.avgCookie);};
+  this.calcByHour = function() {for(var i = 0; i < storeHours.length - 1; i++) {
+    this.byTheHour.push(this.calcNumCookies());
+    this.totalSoldStore += this.byTheHour[i];}};
   this.byTheHour = [];
   this.totalSoldStore = 0;
   Cookie.allStores.push(this);
 }
+
 
 Cookie.renderHeader = function() {
   var headerRow = document.createElement('tr');
@@ -41,7 +42,7 @@ Cookie.prototype.render = function() {
   tdEl.textContent = this.storeName;
   trEl.appendChild(tdEl);
 
-  for(var i = 0; i < storeHours.length; i++) {
+  for(var i = 0; i < storeHours.length - 1; i++) {
     tdEl = document.createElement('td');
     tdEl.textContent = this.byTheHour[i];
     trEl.appendChild(tdEl);
@@ -68,11 +69,28 @@ Cookie.addNewLocation = function(event) {
   Cookie.renderFooter();
 };
 
-new Cookie('1st and Pike', 23, 65, 6.3);
-new Cookie('SeaTac', 3, 24, 1.2);
-new Cookie('Seattle Center', 11, 38, 3.7);
-new Cookie('Capitol Hill', 20, 38, 2.3);
-new Cookie('Alki', 2, 16, 4.6);
+var firstAndPike = new Cookie('1st and Pike', 23, 65, 6.3);
+var seaTac = new Cookie('SeaTac', 3, 24, 1.2);
+var seattleCenter = new Cookie('Seattle Center', 11, 38, 3.7);
+var capitolHill = new Cookie('Capitol Hill', 20, 38, 2.3);
+var alki = new Cookie('Alki', 2, 16, 4.6);
+
+//firstAndPike.calcNumCustomers();
+//firstAndPike.calcNumCookies();
+firstAndPike.calcByHour();
+
+seaTac.calcNumCustomers();
+seaTac.calcNumCookies();
+
+seattleCenter.calcNumCustomers();
+seattleCenter.calcNumCookies();
+
+capitolHill.calcNumCustomers();
+capitolHill.calcNumCookies();
+
+alki.calcNumCustomers();
+alki.calcNumCookies();
+
 
 Cookie.renderAllStores = function() {
   for(var i = 0; i < Cookie.allStores.length; i++) {
