@@ -13,11 +13,17 @@ function Cookie(storeName, minCust, maxCust, avgCookie) {
   this.avgCookie = avgCookie;
   this.totalSoldStore = 0;
   this.byTheHour = [];
-  this.calcNumCustomers = function() {return (Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust);};
-  this.calcNumCookies = function() {return (Math.ceil(this.calcNumCustomers() * this.avgCookie));};
-  this.calcByHour = function() {for(var i = 0; i < storeHours.length; i++) {
-    this.byTheHour.push(this.calcNumCookies());
-    this.totalSoldStore += this.byTheHour[i];}};
+  this.calcNumCustomers = function() {
+    return (Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust);
+  };
+  this.calcNumCookies = function() {
+    return (Math.ceil(this.calcNumCustomers() * this.avgCookie));
+  };
+  this.calcByHour = function() {
+    for(var i = 0; i < storeHours.length; i++) {
+      this.byTheHour.push(this.calcNumCookies());
+      this.totalSoldStore += this.byTheHour[i];}
+  };
   this.calcByHour();
   Cookie.allStores.push(this);
 }

@@ -94,6 +94,30 @@ label, input {
   width: 300px;
 }
 
+#menu-table {
+  margin: 20px;
+}
+
+#frosted-cookie-pic {
+  margin: 20px;
+}
+
 .merch-pic {
   width: 250px;
+  margin: 30px;
+}
+
+footer {
+  margin-top: 50px;
+  margin-bottom: 25px;
+}
+
+#chinook-left {
+  width: 200px;
+  transform: rotateY(180deg);
+}
+
+#chinook-right {
+  float: right;
+  width: 200px;
 }
