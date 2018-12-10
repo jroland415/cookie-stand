@@ -1,37 +1,29 @@
-#sales-page {
-  background-color: lemonchiffon;
-}
-
-#public-page {
+body {
   background-color: bisque;
 }
 
-#salmon-cookies-heading {
-  font-size: 45px;
-  color: saddlebrown;
-  text-align: center;
-}
+/* Sales Page */
 
 #hourly-sales-heading {
   font-size: 45px;
-  color: darkslategrey;
+  color: rgb(112, 56, 15);
   text-align: center;
 }
 
 #cookie-table {
-   margin-left: auto;
-   margin-right: auto;
-   border: 8px double darkslategrey;
+  margin-left: auto;
+  margin-right: auto;
+  border: 8px double rgb(112, 56, 15);
 }
 
-th {
+#cookie-table th {
   padding: 10px;
-  border-bottom: 3px solid darkslategrey;
+  border-bottom: 3px solid rgb(112, 56, 15);
 }
 
-td {
+#cookie-table td {
   padding: 10px;
-  border: 1px solid darkslategrey;
+  border: 1px solid rgb(112, 56, 15);
 }
 
 #store-name {
@@ -68,6 +60,45 @@ label, input {
   padding: 3px;
 }
 
+/* Public Page  */
+
+#salmon-cookies-heading {
+  font-size: 45px;
+  color: rgb(112, 56, 15);
+  text-align: center;
+}
+
+main h2 {
+  border-bottom: 3px solid rgb(112, 56, 15);
+  color: rgb(112, 56, 15);
+  font-size: 30px;
+}
+
+#location-list li {
+  font-size: 20px;
+  list-style-type: none;
+  line-height: 30px;
+}
+
+#merch-list li {
+  display: inline-block;
+  list-style-type: none;
+  margin: 10px 170px 30px 40px;
+}
+
+main p {
+  font-size: 20px;
+}
+
+#menu-table {
+  display: inline-block;
+}
+
+#menu-table td {
+  border: 2px solid rgb(112, 56, 15);
+  padding: 8px;
+}
+
 .salmon-pic {
   width: 125px;
   margin: 10px;
@@ -99,7 +130,7 @@ label, input {
 }
 
 #frosted-cookie-pic {
-  margin: 20px;
+  margin-left: 200px;
 }
 
 .merch-pic {
